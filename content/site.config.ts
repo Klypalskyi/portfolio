@@ -120,6 +120,13 @@ export const site: SiteConfig = {
     ndaIntro: "Client names stay confidential, but the industries and stacks don't have to.",
     nda: [
       {
+        category: 'Health tech · Clinical trials',
+        title: 'Multi-tenant clinical trial platform',
+        description:
+          'Multi-tenant platform for hospital research departments, replacing a legacy internal system. I ship features end to end — spec, Spring Boot API, React admin UI, Playwright journey — most recently DB-persisted staff burnout assessments behind a public response link, and an org-scoped disease taxonomy customers manage themselves.',
+        tags: ['Java 25', 'Spring Boot', 'React 19', 'PostgreSQL', 'Playwright'],
+      },
+      {
         category: 'E-commerce · Enterprise',
         title: 'Network-marketing platform migration',
         description:
