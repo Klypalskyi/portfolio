@@ -15,7 +15,6 @@ function FeaturedPreview() {
           src={preview.src}
           title={preview.title}
           loading="lazy"
-          // The preview is decorative: the adjacent link is the real way in.
           sandbox="allow-scripts allow-same-origin"
           className="block h-full w-full border-none"
         />

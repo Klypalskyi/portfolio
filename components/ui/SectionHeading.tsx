@@ -2,15 +2,12 @@ import { Reveal } from '@/components/Reveal'
 import { cn } from '@/lib/cn'
 
 type SectionHeadingProps = {
-  /** Small uppercase kicker. Omit for a sub-heading inside a section. */
   eyebrow?: string
   title: string
-  /** Optional lead paragraph under the title. */
   intro?: string
   className?: string
 }
 
-/** The uppercase eyebrow + large display title that opens every section. */
 export function SectionHeading({ eyebrow, title, intro, className }: SectionHeadingProps) {
   return (
     <div className={cn(className)}>

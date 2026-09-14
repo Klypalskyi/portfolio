@@ -7,12 +7,6 @@ type CountUpProps = {
   suffix?: string
 }
 
-/**
- * Counts from 0 to `value` over one second when it first scrolls into view.
- *
- * The final number is rendered on the server too, so the stat is correct
- * before hydration and for anyone without JS.
- */
 export function CountUp({ value, suffix = '' }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const [display, setDisplay] = useState(value)

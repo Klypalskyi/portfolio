@@ -4,13 +4,6 @@ import { Reveal } from '@/components/Reveal'
 import { Pill } from '@/components/ui/Pill'
 import { site } from '@/content/site.config'
 
-/**
- * One word of the hero headline, sliding up from behind a clipping mask.
- *
- * Each word needs its own `overflow: hidden` box, which means the words are
- * separate elements and JSX swallows the whitespace between them — hence the
- * explicit trailing space, placed outside the mask so it is never clipped.
- */
 function MaskedWord({ children, index }: { children: React.ReactNode; index: number }) {
   return (
     <>

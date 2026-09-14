@@ -16,13 +16,6 @@ function Track({ 'aria-hidden': ariaHidden }: { 'aria-hidden'?: boolean }) {
   )
 }
 
-/**
- * The endlessly scrolling tech strip.
- *
- * Two identical tracks sit side by side and the pair translates by exactly
- * -50%, so the second track lands where the first began and the loop is
- * invisible. The duplicate is hidden from screen readers.
- */
 export function Marquee() {
   return (
     <div className="border-line bg-surface overflow-hidden border-y py-[18px]">

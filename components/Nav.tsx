@@ -1,6 +1,5 @@
 import { site } from '@/content/site.config'
 
-/** Sticky, translucent top bar. Section links collapse away on small screens. */
 export function Nav() {
   return (
     <nav className="border-line bg-canvas/90 sticky top-0 z-20 border-b backdrop-blur-[10px]">

@@ -46,11 +46,6 @@ export const viewport: Viewport = {
   themeColor: '#F3F5F9',
 }
 
-/**
- * Runs before first paint so `[data-reveal]` elements are hidden from the very
- * first frame instead of flashing in and then jumping. If motion is off, the
- * class is never added and the CSS leaves everything visible.
- */
 const MOTION_BOOTSTRAP = `
 (function () {
   try {
@@ -61,7 +56,6 @@ const MOTION_BOOTSTRAP = `
 })();
 `
 
-/** Structured data so search engines read the page as a person, not a blog. */
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',

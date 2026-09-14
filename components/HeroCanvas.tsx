@@ -2,17 +2,10 @@
 
 import { useEffect, useRef } from 'react'
 
-const GRID_GAP = 32 // px between dots
-const CURSOR_RADIUS = 200 // px of influence around the pointer
-const MAX_PUSH = 24 // px a dot is shoved away at the centre
+const GRID_GAP = 32
+const CURSOR_RADIUS = 200
+const MAX_PUSH = 24
 
-/**
- * The drifting dot field behind the hero.
- *
- * Dots wander on a slow sine, and bulge away from the cursor. With motion off
- * it paints one static frame instead of animating, so the texture is still
- * there but nothing moves.
- */
 export function HeroCanvas() {
   const ref = useRef<HTMLCanvasElement>(null)
 
@@ -77,7 +70,6 @@ export function HeroCanvas() {
     }
 
     if (!animated) {
-      // One static frame, redrawn only if the viewport changes size.
       draw()
       const resizeObserver = new ResizeObserver(() => draw())
       resizeObserver.observe(canvas)
@@ -86,7 +78,6 @@ export function HeroCanvas() {
 
     window.addEventListener('mousemove', onPointerMove)
 
-    // Stop burning frames once the hero has scrolled away.
     let visible = true
     const visibility = new IntersectionObserver(
       ([entry]) => {

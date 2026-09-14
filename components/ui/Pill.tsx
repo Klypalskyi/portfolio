@@ -10,7 +10,6 @@ const VARIANTS = {
     'bg-surface text-ink border border-line hover:border-accent hover:text-accent hover:-translate-y-0.5',
 } as const
 
-/** Variants for the dark footer, where the light `outline` would disappear. */
 const NIGHT_VARIANTS = {
   solid: 'bg-paper text-ink hover:-translate-y-0.5',
   accent: 'bg-accent text-white hover:bg-accent-hover hover:-translate-y-0.5',
@@ -19,12 +18,10 @@ const NIGHT_VARIANTS = {
 } as const
 
 type PillProps = Cta & {
-  /** Use the dark-footer palette. */
   night?: boolean
   className?: string
 }
 
-/** The rounded link button used for every call to action on the page. */
 export function Pill({ label, href, variant = 'outline', external, night, className }: PillProps) {
   const palette = night ? NIGHT_VARIANTS : VARIANTS
   const openInNewTab = external ?? isExternal(href)

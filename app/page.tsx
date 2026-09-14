@@ -7,10 +7,6 @@ import { Nav } from '@/components/Nav'
 import { Skills } from '@/components/Skills'
 import { Work } from '@/components/Work'
 
-/**
- * The whole portfolio is one page. Section order is fixed here; the content of
- * every section comes from `content/site.config.ts`.
- */
 export default function Home() {
   return (
     <>

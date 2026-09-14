@@ -3,7 +3,6 @@ import { Pill } from '@/components/ui/Pill'
 import { site } from '@/content/site.config'
 import type { Phone } from '@/content/types'
 
-/** A tel: link prefixed with a small CSS-drawn flag. */
 function PhoneLink({ phone }: { phone: Phone }) {
   return (
     <a

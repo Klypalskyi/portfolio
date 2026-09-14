@@ -3,7 +3,6 @@ import { Tag } from '@/components/ui/Tag'
 import { site } from '@/content/site.config'
 import { withBasePath } from '@/lib/basePath'
 
-/** The portrait, or a labelled frame when no photo is configured yet. */
 function Portrait() {
   const { portrait, portraitAlt } = site.about
 

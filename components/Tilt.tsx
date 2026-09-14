@@ -7,12 +7,6 @@ type TiltProps = {
   className?: string
 }
 
-/**
- * Tips a card a few degrees toward the cursor, and settles back on leave.
- *
- * Pointer-driven only — it never runs on touch devices (no mousemove) and is
- * skipped entirely when motion is off.
- */
 export function Tilt({ children, className }: TiltProps) {
   const ref = useRef<HTMLDivElement>(null)
 

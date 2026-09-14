@@ -143,8 +143,3 @@ A tiny blocking script in `<head>` adds a `motion` class to `<html>` before
 first paint, so revealed elements are hidden from frame one rather than
 flashing in and jumping. If any of the three levels says no, the class is never
 added and the page renders as plain, fully-visible HTML.
-
----
-
-Design originated in [Claude Design](https://claude.ai/design) and was rebuilt
-here as production React.

@@ -1,55 +1,41 @@
 @import 'tailwindcss';
 
-/* ───────────────────────────────────────────────────────────────────────────
-   Design tokens.
-
-   Every colour, font, and radius on the site resolves to one of these. Change
-   a value here and it propagates everywhere — this is where you retheme.
-   ─────────────────────────────────────────────────────────────────────────── */
 @theme {
-  /* Surfaces */
-  --color-canvas: #f3f5f9; /* page background */
-  --color-surface: #ffffff; /* cards */
-  --color-surface-alt: #edf0f6; /* banded sections */
-  --color-line: #dfe5ee; /* hairline borders */
-  --color-chip: #e9edf4; /* muted tag pills */
+  --color-canvas: #f3f5f9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #edf0f6;
+  --color-line: #dfe5ee;
+  --color-chip: #e9edf4;
 
-  /* Text */
-  --color-ink: #0e1526; /* headings, body */
-  --color-ink-soft: #1e2a45; /* solid button hover */
-  --color-muted: #5b6779; /* secondary copy */
-  --color-faint: #94a0b4; /* eyebrows, meta */
+  --color-ink: #0e1526;
+  --color-ink-soft: #1e2a45;
+  --color-muted: #5b6779;
+  --color-faint: #94a0b4;
 
-  /* Brand */
   --color-accent: #4b4df7;
   --color-accent-hover: #6366f1;
   --color-accent-deep: #3730c4;
   --color-accent-soft: #e7e7fe;
 
-  /* Dark footer */
   --color-night: #0e1526;
   --color-night-line: #2a3554;
   --color-night-muted: #9aa3c7;
   --color-night-faint: #6b77a0;
   --color-paper: #f0f3fa;
 
-  /* Status */
   --color-ok-bg: #e1f5e9;
   --color-ok-text: #15803d;
   --color-ok-dot: #16a34a;
   --color-nda: #d97706;
 
-  /* Type */
   --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
-  /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   scroll-behavior: smooth;
-  /* Keep anchored sections clear of the sticky nav. */
   scroll-padding-top: 5rem;
 }
 
@@ -61,8 +47,6 @@ body {
   overflow-x: hidden;
 }
 
-/* The tech strip scrolls one full copy of its content, then snaps back.
-   Two identical copies are rendered so the loop is seamless. */
 @keyframes marquee {
   to {
     transform: translateX(-50%);
@@ -79,13 +63,6 @@ body {
   }
 }
 
-/* ───────────────────────────────────────────────────────────────────────────
-   Reveal-on-scroll.
-
-   Elements start hidden only once JS has confirmed animation is on (the
-   `motion` class is set on <html> at runtime). Without JS, or with reduced
-   motion, nothing is ever hidden — the page renders fully visible.
-   ─────────────────────────────────────────────────────────────────────────── */
 .motion [data-reveal] {
   opacity: 0;
   transform: translateY(26px);
@@ -100,7 +77,6 @@ body {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-/* Hero headline words slide up from behind a clipping mask. */
 .motion [data-word] {
   transform: translateY(115%);
 }
@@ -116,7 +92,6 @@ body {
     scroll-behavior: auto;
   }
 
-  /* Belt and braces: even if `motion` is on the html element, freeze it. */
   .motion [data-reveal],
   .motion [data-word] {
     opacity: 1;

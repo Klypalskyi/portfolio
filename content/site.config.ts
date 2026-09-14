@@ -1,17 +1,5 @@
 import type { SiteConfig } from './types'
 
-/**
- * ─────────────────────────────────────────────────────────────────────────────
- *  EVERYTHING ON THE SITE LIVES HERE.
- *
- *  To update the portfolio you should only ever need to edit this one file.
- *  Add a job → add an object to `experience.items`.
- *  Add a project → add an object to `work.nda`.
- *  Take the site off the market → set `flags.openToWork` to false.
- *
- *  Field-by-field documentation is in `content/types.ts`.
- * ─────────────────────────────────────────────────────────────────────────────
- */
 export const site: SiteConfig = {
   meta: {
     title: 'Mykhailo Klypalskyi — Sr. Fullstack Software Developer',
@@ -43,10 +31,6 @@ export const site: SiteConfig = {
     location: 'Cambrils, Spain',
     email: 'klypalskyi@gmail.com',
     monogram: 'MK',
-    // Deliberately empty: phone numbers are not published in this repo.
-    // To show one, add { label, href: 'tel:…', flag: [...] } here and set
-    // flags.showPhone to true. `flag` is a list of horizontal stripe colours,
-    // top to bottom — e.g. ['#0057B7', '#FFD700'] for Ukraine.
     phones: [],
     links: [
       { label: 'GitHub', href: 'https://github.com/Klypalskyi' },
@@ -242,7 +226,6 @@ export const site: SiteConfig = {
   about: {
     eyebrow: 'About',
     title: 'Engineer first, manager when it helps',
-    // Drop a photo in /public and set this to e.g. '/portrait.jpg'.
     portrait: null,
     portraitAlt: 'Mykhailo Klypalskyi',
     paragraphs: [

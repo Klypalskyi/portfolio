@@ -16,8 +16,6 @@ export function Experience() {
             <Reveal
               key={`${item.company}-${item.period}`}
               as="li"
-              /* Mobile stacks date over body beside a single rail;
-                 from `sm` the date moves into its own right-aligned column. */
               className="grid grid-cols-[18px_1fr] gap-x-3.5 sm:grid-cols-[200px_28px_1fr] sm:gap-x-5"
             >
               <p className="order-1 mb-1 text-[13px] font-bold text-faint sm:order-none sm:mb-0 sm:pt-1 sm:text-right">
