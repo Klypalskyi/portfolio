@@ -23,6 +23,9 @@ export const site: SiteConfig = {
     ],
   },
 
+  analytics: {
+    umamiWebsiteId: '6685acd0-78bc-4f5b-a036-ab62513cba2c',
+  },
   flags: {
     openToWork: true,
     showPhone: false,

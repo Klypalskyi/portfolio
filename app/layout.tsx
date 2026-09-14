@@ -4,6 +4,7 @@ import { Manrope, Sora } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 
 import { CalEmbed } from '@/components/CalEmbed'
+import { ClickTracking } from '@/components/ClickTracking'
 import { MotionEffects } from '@/components/MotionEffects'
 import { site } from '@/content/site.config'
 
@@ -75,6 +76,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${sora.variable} ${manrope.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: MOTION_BOOTSTRAP }} />
+        {site.analytics.umamiWebsiteId ? (
+          <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id={site.analytics.umamiWebsiteId}
+            data-domains={new URL(site.meta.url).hostname}
+          />
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -84,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <MotionEffects />
         {site.person.bookingUrl ? <CalEmbed /> : null}
+        {site.analytics.umamiWebsiteId ? <ClickTracking /> : null}
       </body>
     </html>
   )

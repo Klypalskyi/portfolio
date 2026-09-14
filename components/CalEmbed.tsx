@@ -1,5 +1,6 @@
 'use client'
 
+import { track } from '@/lib/analytics'
 import { CAL_NAMESPACE } from '@/lib/cal'
 import { getCalApi } from '@calcom/embed-react'
 import { useEffect } from 'react'
@@ -21,6 +22,7 @@ export function CalEmbed() {
           dark: { 'cal-brand': '#6366f1' },
         },
       })
+      cal('on', { action: 'bookingSuccessfulV2', callback: () => track('Booking completed') })
     })
 
     const onClick = (event: MouseEvent) => {

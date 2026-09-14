@@ -68,6 +68,9 @@ export type SiteConfig = {
     ogImage: string | null
     keywords: string[]
   }
+  analytics: {
+    umamiWebsiteId: string
+  }
   flags: {
     openToWork: boolean
     showPhone: boolean
