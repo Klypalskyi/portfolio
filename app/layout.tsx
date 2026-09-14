@@ -69,7 +69,7 @@ const personSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${sora.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${sora.variable} ${manrope.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: MOTION_BOOTSTRAP }} />
         <script
