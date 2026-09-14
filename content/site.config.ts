@@ -1,4 +1,9 @@
-import type { SiteConfig } from './types'
+import type { Cta, SiteConfig } from './types'
+
+const bookingUrl = 'https://cal.com/mykhailo-klypalskyi/intro-call'
+
+const bookCall = (variant: Cta['variant']): Cta[] =>
+  bookingUrl ? [{ label: 'Book a call', href: bookingUrl, variant }] : []
 
 export const site: SiteConfig = {
   meta: {
@@ -30,6 +35,7 @@ export const site: SiteConfig = {
     role: 'Sr. Fullstack Software Developer',
     location: 'Cambrils, Spain',
     email: 'klypalskyi@gmail.com',
+    bookingUrl,
     monogram: 'MK',
     phones: [],
     links: [
@@ -57,7 +63,12 @@ export const site: SiteConfig = {
     intro:
       'Senior full stack and product engineer with 7+ years delivering scalable web applications and leading teams. Most of the work lives behind NDAs — enterprise e-commerce, a global music analytics programme, fintech — so this page shows the shape of it.',
     ctas: [
-      { label: 'klypalskyi@gmail.com', href: 'mailto:klypalskyi@gmail.com', variant: 'solid' },
+      ...bookCall('solid'),
+      {
+        label: 'klypalskyi@gmail.com',
+        href: 'mailto:klypalskyi@gmail.com',
+        variant: bookingUrl ? 'outline' : 'solid',
+      },
       { label: 'GitHub', href: 'https://github.com/Klypalskyi', variant: 'outline' },
       { label: 'LinkedIn', href: 'https://linkedin.com/in/mike-klypalskyi', variant: 'outline' },
     ],
@@ -226,8 +237,11 @@ export const site: SiteConfig = {
   about: {
     eyebrow: 'About',
     title: 'Engineer first, manager when it helps',
-    portrait: null,
-    portraitAlt: 'Mykhailo Klypalskyi',
+    photos: [
+      { src: '/about/hangar.jpg', alt: 'Mykhailo in an aircraft hangar in front of a light aircraft' },
+      { src: '/about/street.jpg', alt: 'Mykhailo on an old stone street' },
+      { src: '/about/croissant.jpg', alt: 'Mykhailo holding a giant croissant in a supermarket' },
+    ],
     paragraphs: [
       "I've spent the last six years at Techery growing from senior engineer to team lead to engineering manager of six — while staying hands-on: migrating an AngularJS platform to Next.js and then to App Router, designing a greenfield NX monorepo architecture, and building an internal AI wrapper that reads Jira tasks and drives implementation.",
       'I care about measurable outcomes: 25% faster delivery through sprint ownership models, 40% fewer production bugs, 2+ hours saved per release through CMS migration automation. Based in Cambrils, Spain; working remotely across distributed teams.',
@@ -239,9 +253,14 @@ export const site: SiteConfig = {
     eyebrow: 'Contact',
     headline: "Let's talk",
     blurb:
-      'Open to senior full stack and engineering-lead roles. The fastest way to reach me is email.',
+      'Open to senior full stack and engineering-lead roles. The fastest way to reach me is to book a 30-minute intro call — or just email.',
     ctas: [
-      { label: 'klypalskyi@gmail.com', href: 'mailto:klypalskyi@gmail.com', variant: 'accent' },
+      ...bookCall('accent'),
+      {
+        label: 'klypalskyi@gmail.com',
+        href: 'mailto:klypalskyi@gmail.com',
+        variant: bookingUrl ? 'outline' : 'accent',
+      },
       { label: 'LinkedIn', href: 'https://linkedin.com/in/mike-klypalskyi', variant: 'outline' },
       { label: 'GitHub', href: 'https://github.com/Klypalskyi', variant: 'outline' },
     ],

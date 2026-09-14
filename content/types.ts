@@ -55,6 +55,11 @@ export type Phone = {
 
 export type NavItem = { label: string; href: string }
 
+export type Photo = {
+  src: string
+  alt: string
+}
+
 export type SiteConfig = {
   meta: {
     title: string
@@ -74,6 +79,7 @@ export type SiteConfig = {
     role: string
     location: string
     email: string
+    bookingUrl: string
     phones: Phone[]
     monogram: string
     links: { label: string; href: string }[]
@@ -109,8 +115,7 @@ export type SiteConfig = {
   about: {
     eyebrow: string
     title: string
-    portrait: string | null
-    portraitAlt: string
+    photos: Photo[]
     paragraphs: string[]
     chips: string[]
   }
