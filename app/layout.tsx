@@ -1,8 +1,11 @@
-import type { Metadata, Viewport } from 'next'
+import './globals.css'
+
 import { Manrope, Sora } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+
+import { CalEmbed } from '@/components/CalEmbed'
 import { MotionEffects } from '@/components/MotionEffects'
 import { site } from '@/content/site.config'
-import './globals.css'
 
 const sora = Sora({
   subsets: ['latin'],
@@ -80,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <MotionEffects />
+        {site.person.bookingUrl ? <CalEmbed /> : null}
       </body>
     </html>
   )

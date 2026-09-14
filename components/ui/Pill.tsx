@@ -1,5 +1,6 @@
 import type { Cta } from '@/content/types'
 import { cn } from '@/lib/cn'
+import { calTriggerProps } from '@/lib/cal'
 import { externalProps, isExternal } from '@/lib/links'
 
 const VARIANTS = {
@@ -30,6 +31,7 @@ export function Pill({ label, href, variant = 'outline', external, night, classN
     <a
       href={href}
       {...(openInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : externalProps(href))}
+      {...calTriggerProps(href)}
       className={cn(
         'inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-bold transition-[transform,box-shadow,background-color,border-color,color] duration-200',
         palette[variant],

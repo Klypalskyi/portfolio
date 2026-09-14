@@ -1,4 +1,5 @@
 import { site } from '@/content/site.config'
+import { calTriggerProps } from '@/lib/cal'
 import { cn } from '@/lib/cn'
 
 const SEGMENT =
@@ -44,6 +45,7 @@ export function Nav() {
                 href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                {...calTriggerProps(bookingUrl)}
                 className={cn(SEGMENT, 'bg-ink hover:bg-ink-soft text-paper')}
               >
                 Book a call
